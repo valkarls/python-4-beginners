@@ -1,6 +1,5 @@
 import math
-import urllib.request
-import json
+import requests
 
 def calc_dist(lat1, lon1, lat2, lon2):
     lat1 = math.radians(lat1)
@@ -20,8 +19,8 @@ def get_dist(meteor):
 
 my_loc = (28.045043377761125, -82.41810020059349)
 
-meteor_resp = urllib.request.urlopen('https://data.nasa.gov/resource/y77d-th95.json')
-meteor_data = json.load(meteor_resp)
+meteor_resp = requests.get('https://data.nasa.gov/resource/y77d-th95.json')
+meteor_data = meteor_resp.json()
 
 for meteor in meteor_data:
     if not ('reclat' in meteor and 'reclong' in meteor): continue

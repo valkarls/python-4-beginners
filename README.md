@@ -5,4 +5,9 @@ A demo project using Python, following instructions on an A Cloud Guru tutorial.
 
 This project requires Python 3 and the 'requests' package.
 
-'python3 find_meteors.py'
+First, install pipenv. Then:
+
+'''
+pipenv install
+pipenv run "python find_meteors.py"
+'''
